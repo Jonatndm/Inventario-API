@@ -29,7 +29,7 @@ El proyecto sigue la Arquitectura Limpia (Clean Architecture) con las siguientes
     cd inventario-api
     npm install
 
-## Como Ejecutar el proyecto
+## Cómo Ejecutar el Proyecto
 
 1. Compila el codigo TypeScript
     npm run build
@@ -77,10 +77,14 @@ Eliminar un producto
 
 ## Principios de Clean Code Aplicados
 Nombres Descriptivos: Todas las variables, clases y funciones tienen nombres claros y auto-explicativos. Ejemplo: ProductoService, crearProducto(), listarProductos().
+
 Funciones Cortas y Específicas: Las funciones hacen una sola cosa. Por ejemplo, listarProductos() solo se encarga de devolver todos los productos.
+
 Eliminación de Comentarios Innecesarios: En lugar de comentarios, el código es lo suficientemente claro para que se entienda sin anotaciones.
+
 Principios SOLID:
 Responsabilidad Única (Single Responsibility): Cada clase y función tiene una única responsabilidad. Ejemplo: ProductoService maneja la lógica de negocio para los productos.
+
 Inversión de Dependencias (Dependency Inversion): Se usa un repositorio abstracto (interfaz) en la capa de dominio, desacoplando la lógica de la implementación concreta (memoria en este caso).
 
 ## Arquitectura Aplicada
@@ -100,10 +104,10 @@ Implementa el repositorio de productos en memoria (InMemoryProductoRepository), 
 ## Ejemplos de uso
 
 1. Obtener todos los productos:
-    curl -X GET http://localhost:3000/api/productos
+    GET http://localhost:3000/api/productos
 
 2. Crear un producto nuevo:
-    curl -X POST http://localhost:3000/api/productos \
+    POST http://localhost:3000/api/productos \
     -H 'Content-Type: application/json' \
     -d '{
         "id": "9",
@@ -114,7 +118,7 @@ Implementa el repositorio de productos en memoria (InMemoryProductoRepository), 
     }'
 
 3. Actualizar un producto existente:
-    curl -X PUT http://localhost:3000/api/productos/9 \
+    http://localhost:3000/api/productos/9 \
     -H 'Content-Type: application/json' \
     -d '{
         "nombre": "Producto Actualizado",
@@ -124,4 +128,4 @@ Implementa el repositorio de productos en memoria (InMemoryProductoRepository), 
     }'
 
 4. Eliminar un producto:
-    curl -X DELETE http://localhost:3000/api/productos/9
+    DELETE http://localhost:3000/api/productos/9
